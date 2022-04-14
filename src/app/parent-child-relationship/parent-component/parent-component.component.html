@@ -1,0 +1,40 @@
+<div class="parent">
+    <h2>Parent component</h2>
+    <div>
+        <form>
+            <label for="fname">First Child Name</label>
+            <input type="text" [formControl]="firstChildName" id="firstChildName" name="fname">
+            <button class="submit" (click)="changeFirstChildData()" hidden>send data to first</button>
+            <label for="lname">Second Child Name</label>
+            <input type="text" [formControl]="secondChildName" id="secondChildName" name="fname">
+            <button class="submit" (click)="changeSecondChildData()" hidden>send data to second</button>
+
+        </form>
+    </div>
+    <div class="data-from-child" *ngIf="firstChildToParentData.length>0 || secondChildToParenData.length>0">
+        <div class="data-from-first" *ngIf="firstChildToParentData.length>0">
+            <h2>Data from first Child</h2>
+            <ul>
+                <li *ngFor="let data of firstChildToParentData">{{data}}</li>
+            </ul>
+        </div>
+        <div class="data-from-second" *ngIf="secondChildToParenData.length>0">
+            <h2>Data from Second Child</h2>
+            <div class="data-from-first">
+                <ul>
+                    <li *ngFor="let data of secondChildToParenData">{{data}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="child">
+        <div class="first-child">
+            <app-first-child [dataFromParent]="parentToFirstChild" [dataFromsibling]="secondToFirstChildData" (firstChildToParent)="firstChildToParent($event)" (firstToSecondChildData)="firstToSecondChild($event)"></app-first-child>
+        </div>
+        <div class="second-child">
+            <app-second-child [dataFromParent]="parentToSecondChild" [dataFromsibling]="firstToSecondChildData" (secondChildToParent)="secondChildToParent($event)" (SecondToFirstChildData)="SecondToFirstChild($event)"></app-second-child>
+        </div>
+    </div>
+
+
+</div>

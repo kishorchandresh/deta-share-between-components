@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.parent {
+    border: 1px solid black;
+    background-color: greenyellow;
+    color: black;
+    border-radius: 10px;
+    margin: 0;
+    padding: 1%;
+}
+
+.parent .child {
+    display: flex;
+    margin: 5px;
+    /* padding: 1%; */
+}
+
+.parent .child .first-child {
+    border: 1px solid black;
+    background-color: royalblue;
+    color: black;
+    border-radius: 10px;
+    margin: 0.5%;
+    padding: 1%;
+    width: 49%;
+}
+
+.parent .child .second-child {
+    border: 1px solid black;
+    background-color: blueviolet;
+    color: black;
+    border-radius: 10px;
+    margin: 0.5%;
+    padding: 1%;
+    width: 49%;
+}
+
+.parent form {
+    border: 1px solid black;
+    background-color: brown;
+    border-radius: 10px;
+    color: white;
+    margin: 0;
+    padding: 1%;
+}
+
+.data-from-child {
+    border: 1px solid black;
+    background-color: brown;
+    border-radius: 10px;
+    color: white;
+    margin: 0.5%;
+    padding: 1%;
+    display: flex;
+}
+
+.data-from-first {
+    width: 49%;
+}
+
+.data-from-second {
+    width: 49%;
+}
+
+.data-send form {
+    margin: 10px 0;
+    padding: auto;
+}
+
+.data-from-sibling {
+    border: 1px solid black;
+    background-color: violet;
+    border-radius: 10px;
+    color: white;
+    margin: 0.5%;
+    padding: 1%;
+}

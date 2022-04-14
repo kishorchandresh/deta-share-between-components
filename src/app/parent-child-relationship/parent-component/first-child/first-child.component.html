@@ -1,0 +1,25 @@
+<h2>Fist child</h2>
+<div *ngIf="dataFromParent">
+    <p>Name: {{dataFromParent.name}}</p>
+
+</div>
+<div *ngIf="dataFromsibling.data" class="data-from-sibling">
+    <h2> Data From Sibling Component</h2>
+    <p>
+        {{dataFromsibling.data}}
+    </p>
+</div>
+
+<h2>First Child to parent</h2>
+<div class="data-send">
+    <form>
+        <label for="fname">Data From To Parent</label>
+        <input type="text" [formControl]="addDataToParent" id="addDataToParent" name="addDataToParent">
+        <button (click)="child2Parent()">Send Data to Parent</button>
+    </form>
+    <form>
+        <label for="fname">Data From To Parent</label>
+        <input type="text" [formControl]="dataForSecond" id="dataForSecond" name="dataForSecond">
+        <button (click)="firstChild2SecondChild()">Send Data to Second Component</button>
+    </form>
+</div>
